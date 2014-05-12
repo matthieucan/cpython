@@ -1,0 +1,8 @@
+language: c
+
+install:
+  - sudo apt-get update -qq
+  - sudo apt-get install -y coccinelle
+
+script:
+  - spatch -sp_file semicolon.cocci . 2>/dev/null
